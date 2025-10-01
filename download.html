@@ -41,11 +41,16 @@
 
                         <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
                             <ul class="navbar-nav mb-2 mb-lg-0">
-                                <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door-fill me-1 icono-menu"></i>Home</a></li>
-                                <li class="nav-item"><a class="nav-link" href="registro.html"><i class="bi bi-person-fill me-1 icono-menu"></i>Register</a></li>
-                                <li class="nav-item"><a class="nav-link" href="download.html"><i class="bi bi-download me-1 icono-menu"></i>Downloads</a></li>
-                                <li class="nav-item"><a class="nav-link" href="information.html"><i class="bi bi-info-circle-fill me-1 icono-menu"></i>Information</a></li>
-                                <li class="nav-item"><a class="nav-link" href="donation.html"><i class="bi bi-coin me-1 icono-menu"></i>Donations</a></li>
+                                <li class="nav-item"><a class="nav-link" href="index.html"><i
+                                            class="bi bi-house-door-fill me-1 icono-menu"></i>Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="registro.html"><i
+                                            class="bi bi-person-fill me-1 icono-menu"></i>Register</a></li>
+                                <li class="nav-item"><a class="nav-link" href="download.html"><i
+                                            class="bi bi-download me-1 icono-menu"></i>Downloads</a></li>
+                                <li class="nav-item"><a class="nav-link" href="information.html"><i
+                                            class="bi bi-info-circle-fill me-1 icono-menu"></i>Information</a></li>
+                                <li class="nav-item"><a class="nav-link" href="donation.html"><i
+                                            class="bi bi-coin me-1 icono-menu"></i>Donations</a></li>
                             </ul>
                         </div>
                     </div>
@@ -57,22 +62,26 @@
                     <div class="col-12 col-lg-3 contenido">
                         <p class="text-white ms-2 mt-3 text-uppercase fw-bold">Galería</p>
                         <div class="linea"></div>
+
                         <div class="galeria">
-                            <img alt="Imagen 1" src="img/galeria/imagen1.jpg" />
-                            <img alt="Imagen 2" src="img/galeria/2.2.jpeg" />
-                            <img alt="Imagen 3" src="img/galeria/3.3.jpeg" />
-                            <img alt="Imagen 4" src="img/galeria/4.4.jpeg" />
-                            <img alt="Imagen 5" src="img/galeria/5.jpg" />
-                            <img alt="Imagen 6" src="img/galeria/6.jpg" />
+                            <img alt="Imagen 1" src="img/galeria/imagen1.jpg" onclick="openLightbox(0)" />
+                            <img alt="Imagen 2" src="img/galeria/2.2.jpeg" onclick="openLightbox(1)" />
+                            <img alt="Imagen 3" src="img/galeria/3.3.jpeg" onclick="openLightbox(2)" />
+                            <img alt="Imagen 4" src="img/galeria/4.4.jpeg" onclick="openLightbox(3)" />
+                            <img alt="Imagen 5" src="img/galeria/5.jpg" onclick="openLightbox(4)" />
+                            <img alt="Imagen 6" src="img/galeria/6.jpg" onclick="openLightbox(5)" />
                         </div>
+
                         <a class="btn text-white" href="#">VIEW MORE</a>
+
                         <p class="text-white text-uppercase fw-bold mt-4 ms-2">Donaciones</p>
                         <div class="linea"></div>
                         <img alt="Donar" class="donate img-fluid" src="/img/donateb_ES.jpg" />
                     </div>
 
                     <!-- Columna central -->
-                    <div class="col-12 col-lg-6 d-flex text-center text-white d-flex justify-content-center mt-5 mt-sm-none">
+                    <div
+                        class="col-12 col-lg-6 d-flex text-center text-white d-flex justify-content-center mt-5 mt-sm-none">
                         <div class="row d-flex justify-content-center">
                             <div class="col-12 col-lg-6 d-flex flex-column" style="width: 100%;">
                                 <h2>Aca descargaras el Cliente Completo.</h2>
@@ -85,7 +94,7 @@
                                 <a type="button" class="btn" href="">Descargar Cliente</a>
                             </div>
 
-                            
+
                         </div>
                     </div>
 
@@ -123,18 +132,24 @@
     </div>
 
     <!-- Bootstrap JS -->
-     <script src="/js/galeria.js"></script>
+    <script src="/js/galeria.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
 
-        <!-- Lightbox -->
-  <div aria-hidden="true" class="lightbox-overlay lightbox-hidden" id="lightbox" tabindex="-1">
-    <div aria-modal="true" class="lightbox-card" role="dialog">
-      <button aria-label="Cerrar" class="lightbox-close" id="lightboxClose">✕</button>
-      <img alt="Vista ampliada" class="lightbox-img" id="lightboxImage" src="" />
-      <div class="lightbox-caption" id="lightboxCaption"></div>
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="cerrar" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" />
+        <div class="caption" id="caption"></div>
+
+        <!-- Botones a los costados -->
+        <a class="prev" onclick="cambiarImagen(-1)">
+            <i class="bi bi-arrow-left-circle-fill"></i>
+        </a>
+        <a class="next" onclick="cambiarImagen(1)">
+            <i class="bi bi-arrow-right-circle-fill"></i>
+        </a>
     </div>
-  </div>
 </body>
 
 </html>
